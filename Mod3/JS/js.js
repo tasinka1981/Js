@@ -409,6 +409,7 @@ let formatString = function(str) {
 //   findLargestNumber([31, 128, 14, 74])
 // ); // вернет 128
 
+//===============================================================================
 // Домашка
 /*
   Есть массив logins с логинами пользователей. Напишите скрипт добавления логина в массив logins.
@@ -448,72 +449,100 @@ let formatString = function(str) {
         используются результаты вызовов других функций - isLoginUnique и isLoginValid.
 */
 
-const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+// const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
-// Напишите функцию isLoginValid(login), в которой проверьте количество символов
-//   параметра login и верните true или false в зависимости от того, попадает ли длина параметра
-//   в заданный диапазон от 4-х до 16-ти символов включительно.
+// // Напишите функцию isLoginValid(login), в которой проверьте количество символов
+// //   параметра login и верните true или false в зависимости от того, попадает ли длина параметра
+// //   в заданный диапазон от 4-х до 16-ти символов включительно.
 
-const isLoginValid = function(login) {
-  let min = 4;
-  let max = 16;
-  if (login.length >= min && login.length <= max) {
-    return true;
-  } else {
-    return false;
-  }
-};
-// console.log (isLoginValid ('Ajax'));
+// const isLoginValid = function(login) {
+//   let min = 4;
+//   let max = 16;
+//   if (login.length >= min && login.length <= max) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+// // console.log (isLoginValid ('Ajax'));
 
-// Создайте функцию isLoginUnique(allLogins, login), которая принимает логин и список
-//   всех логинов как параметры и проверяет наличие login в массиве allLogins, возвращая true
-//   если такого логина еще нет и false если логин уже используется.
+// // Создайте функцию isLoginUnique(allLogins, login), которая принимает логин и список
+// //   всех логинов как параметры и проверяет наличие login в массиве allLogins, возвращая true
+// //   если такого логина еще нет и false если логин уже используется.
 
-const isLoginUnique = function(allLogins, login) {
-  let message;
-  for (const item of allLogins) {
-    if (login === item) {
-      message = false;
-      break;
-    } else {
-      message = true;
-    }
-  }
-  // console.log(message);
-  return message;
-};
+// const isLoginUnique = function(allLogins, login) {
+//   let message;
+//   for (const item of allLogins) {
+//     if (login === item) {
+//       message = false;
+//       break;
+//     } else {
+//       message = true;
+//     }
+//   }
+//   // console.log(message);
+//   return message;
+// };
 
-// console.log(isLoginUnique (logins, "Poly"));
+// // console.log(isLoginUnique (logins, "Poly"));
 
-// Далее напишите функцию addLogin(allLogins, login) которая:
-//     - Принимает новый логин и массив всех логинов как параметры
-//     - Проверяет валидность логина используя вспомогательную функцию isLoginValid
-//     - Если логин не валиден, прекратить исполнение функции addLogin
-//       и вернуть строку 'Ошибка! Логин должен быть от 4 до 16 символов'
-//     - Если логин валиден, функция addLogin проверяеть уникальность логина
-//       с помощью функции isLoginUnique
-//     - Если isLoginUnique вернет true, addLogin добавляет новый логин
-//        в logins и возвращает строку 'Логин успешно добавлен!'
-//     - Если isLoginUnique вернет false, тогда addLogin не добавляет
-//        логин в массив и возвращает строку 'Такой логин уже используется!'
+// // Далее напишите функцию addLogin(allLogins, login) которая:
+// //     - Принимает новый логин и массив всех логинов как параметры
+// //     - Проверяет валидность логина используя вспомогательную функцию isLoginValid
+// //     - Если логин не валиден, прекратить исполнение функции addLogin
+// //       и вернуть строку 'Ошибка! Логин должен быть от 4 до 16 символов'
+// //     - Если логин валиден, функция addLogin проверяеть уникальность логина
+// //       с помощью функции isLoginUnique
+// //     - Если isLoginUnique вернет true, addLogin добавляет новый логин
+// //        в logins и возвращает строку 'Логин успешно добавлен!'
+// //     - Если isLoginUnique вернет false, тогда addLogin не добавляет
+// //        логин в массив и возвращает строку 'Такой логин уже используется!'
 
-const addLogin = function(allLogins, login) {
-  let resultValid = isLoginValid(login);
-  if (resultValid === false) {
-    console.log("Ошибка! Логин должен быть от 4 до 16 символов");
-  } else if (isLoginUnique(allLogins, login) === true) {
-    console.log("Логин успешно добавлен!");
-    allLogins.push(login);
-    console.log(allLogins);
-  } else {
-    console.log("Такой логин уже используется!");
-  }
-};
-addLogin(logins, "Zod");
+// const addLogin = function(allLogins, login) {
+//   let resultValid = isLoginValid(login);
+//   if (resultValid === false) {
+//     console.log("Ошибка! Логин должен быть от 4 до 16 символов");
+//   } else if (isLoginUnique(allLogins, login) === true) {
+//     console.log("Логин успешно добавлен!");
+//     allLogins.push(login);
+//     console.log(allLogins);
+//   } else {
+//     console.log("Такой логин уже используется!");
+//   }
+// };
+// addLogin(logins, "Zod");
 
-// // Вызовы функции для проверки
-addLogin(logins, "Ajax"); // 'Логин успешно добавлен!'
-addLogin(logins,'robotGoogles'); // 'Такой логин уже используется!'
-addLogin(logins,'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
-addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
-// view rawjs-hw-module-03.js hosted with ❤ by GitHub
+// // // Вызовы функции для проверки
+// addLogin(logins, "Ajax"); // 'Логин успешно добавлен!'
+// addLogin(logins,'robotGoogles'); // 'Такой логин уже используется!'
+// addLogin(logins,'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// // view rawjs-hw-module-03.js hosted with ❤ by GitHub
+
+// Задание 7
+/*  
+  Есть массив уникальных чисел uniqueNumbers.
+  
+  Написать функцию, addUniqueNumbers(...), 
+  которая получает произвольное кол-во чисел как аргументы, 
+  и добавляет в массив uniqueNumbers только уникальные,
+  а те которые в массиве уже есть игнорирует.
+*/
+
+const uniqueNumbers  = [2, 1, 4, 9];
+
+// Вызовы функции для проверки
+addUniqueNumbers(1, 2, 3);
+console.log(
+  uniqueNumbers
+); // [2, 1, 4, 9, 3]
+
+addUniqueNumbers(12, 2, 3, 19);
+console.log(
+  uniqueNumbers
+); // [2, 1, 4, 9, 3, 12, 19]
+
+addUniqueNumbers(4, 5, 12, 3, 1, 2, 8);
+console.log(
+  uniqueNumbers
+); // [2, 1, 4, 9, 3, 12, 19, 5, 8]
