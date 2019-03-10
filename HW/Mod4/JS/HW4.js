@@ -59,6 +59,7 @@ const order = {
 
 const mango = new Cashier("Mango", products);
 
+
 /* 
     Необходимо создать функцию-конструктор Cashier.
    
@@ -117,7 +118,7 @@ const totalPrice = mango.countTotalPrice(order);
 console.log(totalPrice); // 110
 
 //   // Вызываем getCustomerMoney для запроса денег покупателя
-mango.getCustomerMoney(400);
+mango.getCustomerMoney(300);
 
 //   // Проверяем что в поле с деньгами пользователя
 console.log(mango.customerMoney); // 300
