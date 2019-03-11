@@ -388,13 +388,13 @@
 // mango.name = "Mango the Fluffy";
 // console.log(mango.name); // Mango the Fluffy
 //=================================================================================================
-function User(name) {
-this.name = name;
-}
-console.log(User);
-console.log(User.prototype);
-const Lora = new User('Lora');
-console.log(Lora);
+// function User(name) {
+// this.name = name;
+// }
+// console.log(User);
+// console.log(User.prototype);
+// const Lora = new User('Lora');
+// console.log(Lora);
 
 
 
