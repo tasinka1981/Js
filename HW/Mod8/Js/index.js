@@ -74,9 +74,32 @@ const galleryItems = [
     alt: "alt text 6"
   }
 ];
+const imgGallery = document.querySelector(".js-image-gallery");
+const fullview = document.createElement("div");
+imgGallery.appendChild(fullview);
+fullview.classList.add("fullview");
+const fullviewMainImg = document.createElement("img");
+fullview.appendChild(fullviewMainImg);
+fullviewMainImg.setAttribute("src", galleryItems[0].fullview);
+fullviewMainImg.setAttribute("alt", "alt text 1");
+const preview = document.createElement("ul");
+imgGallery.appendChild(preview);
+preview.classList.add("preview");
+
+function createImg() {
+  galleryItems.forEach(function(item) {
+    const galleryConteiner = document.createElement("li");
+    preview.appendChild(galleryConteiner);
+    const galleryImg = document.createElement("img");
+    galleryConteiner.appendChild(galleryImg);
+    galleryImg.setAttribute("src", item.preview);
+    galleryImg.setAttribute("data-fullview", item.fullview);
+    galleryImg.setAttribute("alt", item.alt);
+  });
+}
+createImg();
+
 const previewGallery = document.querySelector(".preview");
-const fullview = document.querySelector(".fullview");
-const imgFullview = fullview.firstElementChild;
 
 function changeFullview(event) {
   const target = event.target;
@@ -86,7 +109,7 @@ function changeFullview(event) {
 }
 
 function findPreview(elem) {
-  imgFullview.src = elem.dataset.fullview;
+  fullviewMainImg.src = elem.dataset.fullview;
 }
 
 function lightPreview(elem) {
