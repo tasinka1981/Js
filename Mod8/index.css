@@ -294,7 +294,7 @@ body {
 
 /* //======================================================================================================= */
 /* доп9 */
-/* * {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -436,12 +436,12 @@ body {
   line-height: 42px;
   cursor: pointer;
   font-family: inherit;
-} */
+}
 
 /* //======================================================================================================= */
 /* доп10 */
 
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -472,4 +472,4 @@ body {
 .menu-link.active {
   background-color: #ff4081;
   color: #ffffff;
-}
+} */

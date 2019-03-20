@@ -121,3 +121,5 @@ function lightPreview(elem) {
 }
 
 previewGallery.addEventListener("click", changeFullview);
+
+

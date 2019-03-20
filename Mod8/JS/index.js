@@ -208,6 +208,31 @@
 // plus.addEventListener('click', counter.increment);
 // minus.addEventListener('click', counter.decrement);
 
+//===========================================================================================
+// еще один вариант(через геттеры)
+// class Counter {
+//   constructor(onChange) {
+//     this.value = 0;
+//     this.onChange = onChange;
+//   }
+  
+//   get increment(){
+//     this.onChange(this.value += 1);
+//   }
+  
+//   get decrement(){
+//     this.onChange(this.value -= 1);
+//   }
+// }
+
+// const value = document.querySelector('.value');
+
+// const counter = new Counter((res) => value.innerHTML = res);
+
+// const onClickHandler = ({target}) => target.dataset.action === 'add'? counter.increment : counter.decrement;
+
+// document.querySelectorAll('.btn').forEach(btn => btn.addEventListener('click', onClickHandler));
+
 //============================================================================================
 // додаткове завдання 4
 /*
@@ -220,7 +245,7 @@
 */
 
 // const result = document.querySelector(".result");
-// const btn = document.querySelector(".btn");
+// const form = document.querySelector(".question-form");
 // const arr = Array.from(document.querySelectorAll("input"));
 // console.log(arr);
 
@@ -233,7 +258,7 @@
 
 //   });
 // };
-// btn.addEventListener("", checkInput);
+// form.addEventListener("submit", checkInput);
 //============================================================================================
 // додаткове завдання 5
 /*
@@ -331,7 +356,7 @@
 // }
 
 // function displayValue() {
-//   value.textContent += input.value;
+//   value.textContent = `Current input value: ${input.value}`;
 // }
 
 // input.addEventListener("focus", displayText);
@@ -354,22 +379,22 @@
     или на серый фон с прозрачностью (js-modal-backdrop), модальное окно должно закрываться.
 */
 
-// const modal = document.querySelector(".js-modal-backdrop");
-// const btn = document.querySelector(".btn");
-// const closeBtn = document.querySelector('[data-action="close-modal"]');
-// // const modalContent = document.querySelector('.modal-content');
+const modal = document.querySelector(".js-modal-backdrop");
+const btn = document.querySelector(".btn");
+const closeBtn = document.querySelector('[data-action="close-modal"]');
+// const modalContent = document.querySelector('.modal-content');
 
-// function openModal() {
-//   modal.classList.remove("modal-hidden");
-// }
-// function closeModal(event) {
-//   if (event.target === closeBtn || event.target === modal)
-//     modal.classList.add("modal-hidden");
-//   return;
-// }
+function openModal() {
+  modal.classList.remove("modal-hidden");
+}
+function closeModal(event) {
+  if (event.target === closeBtn || event.target === modal)
+    modal.classList.add("modal-hidden");
+  return;
+}
 
-// btn.addEventListener("click", openModal);
-// modal.addEventListener("click", closeModal);
+btn.addEventListener("click", openModal);
+modal.addEventListener("click", closeModal);
 
 //============================================================================================
 // додаткове завдання 10
