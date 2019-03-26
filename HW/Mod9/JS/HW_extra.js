@@ -55,9 +55,12 @@
 // let seconds;
 // let milliseconds;
 // let arrTimer = [];
+// let arrToDelete =[];
+
 
 // function start() {
 //   resetBtn.disabled = false;
+
 //   if (startBtn.textContent === "Start" || startBtn.textContent === "Continue") {
 //     startBtn.textContent = "Pause";
 //     startTime = Date.now() - pauseTime;
@@ -90,8 +93,10 @@
 //   pauseTime = 0;
 //   startBtn.textContent = "Start";
 //   resetBtn.disabled = true;
+//   clearList();
 // }
 // function addListTime() {
+//     arrToDelete = [];
 //   let item = document.createElement("li");
 //   console.log(item);
 //   listTime.appendChild(item);
@@ -99,6 +104,16 @@
 //   console.log(arrTimer);
 
 //   item.textContent = timer.textContent;
+
+// }
+// function clearList () {
+//   arrToDelete = document.querySelectorAll('li');
+// // console.log(arrToDelete);
+
+// // listTime.remove(arrToDelete);
+// arrToDelete.remove();
+// listTime.removeChild(arrToDelete);
+//   // console.log(listTime);
 // }
 
 // startBtn.addEventListener("click", start);

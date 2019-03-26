@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Дополнительные задания -->
+    <!-- Задача 1 -->
+    <!-- Разметка элемента списка
+
+<li class="item">
+  <p class="name"><strong>Name:</strong> </p>
+  <p class="quantity"><strong>Quantity:</strong> </p>
+</li>
+ -->
+
+    <!-- Контейнер в который рендерить -->
+    <!-- <ul class="products"></ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script type="hbs/template" id="productsItem">
+      <li class="item">
+          <p class="name"><strong>Name:{{name}}</strong> </p>
+          <p class="quantity"><strong>Quantity:{{quantity}}</strong> </p>
+        </li>
+    </script> -->
+
+    <!-- Задача 2 -->
+    <!-- Разметка поста  -->
+
+    <!-- <article class="post">
+  <h2 class="title"></h2>
+  <p class="text"></p>
+  <span class="fav-icon"></span>
+</article> -->
+
+    <!-- Контейнер в который рендерить -->
+    <section class="posts"></section>
+    <template id="postItem">
+            <article class="post">
+                <h2 class="title">{{title}}</h2>
+                <p class="text">{{text}}</p>
+                {{#if favourite}}
+                <span class="fav-icon"></span>
+                {{else}}
+                {{/if}}
+         </article>
+        </template>
+    
+    
+    
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
